@@ -18,15 +18,16 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> myTabs = [
     //donuttab
-    const MyTab(iconPath: "lib/icons/donut.png",),
+    //const MyTab(iconPath: "lib/icons/donut.png",),
+    const MyTab(iconPath: "lib/icons/donut.png", label: "donut"),
     //burgertab
-    const MyTab(iconPath: "lib/icons/burger.png",),
+    const MyTab(iconPath: "lib/icons/burger.png", label:"burger"),
     //smoothietab
-    const MyTab(iconPath: "lib/icons/smoothie.png",),
+    const MyTab(iconPath: "lib/icons/smoothie.png", label: "smoothie",),
     //pancaketab
-    const MyTab(iconPath: "lib/icons/pancakes.png",),
+    const MyTab(iconPath: "lib/icons/pancakes.png", label: "pancakes"),
     //pizzatab
-    const MyTab(iconPath: "lib/icons/pizza.png",),
+    const MyTab(iconPath: "lib/icons/pizza.png", label: "pizza"),
   ]; 
   @override
   Widget build(BuildContext context) {
@@ -43,14 +44,14 @@ class _HomePageState extends State<HomePage> {
               ),
           ),
         actions: const [Padding(
-          padding: EdgeInsets.only(right:24.0),
+          padding: EdgeInsets.only(right:24),
           child: Icon(Icons.person),
           )],
         ),
         body: Column(children:[
           //texto i want to eat
           const Padding(
-            padding: EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(24),
             child: Row(
               children: [
                 Text("I want to ", style: TextStyle(fontSize:24)),
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
           ),
           //tabbar
           TabBar(tabs: myTabs),
+          
           //tabbarview
           Expanded(child: TabBarView(children: [
           DonutTab(),
@@ -67,7 +69,8 @@ class _HomePageState extends State<HomePage> {
           const SmoothieTab(),
           const PanCakeTab(),
           const PizzaTab()]
-          ))
+          )
+          )
           //total del carrito
         ],),
       ),
